@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+  }
+  
+  
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+  }
+  
+  .header h1 {
+    font-size: 50px;
+  }
+  
+ 
+  .topnav {
+   
+    background-color: #333;
+  }
+
+  .topnav::after{
+   display: block;
+   content: "";
+   clear: both;
+  }
+ 
+  
+ 
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+ 
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+ 
+  }
+  .rightcolumn img{
+
+    float: left;
+  }
+  .card ul{
+
+    list-style: none;
+  }
+  
+  a{
+    text-decoration:none;}
+
+ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .footer {
+    padding: 20px;
+    text-align:left;
+    background-color: #ddd;
+    margin-top: 20px;
+  }
+  
+  #sidebar{
+      position: fixed;
+      width: 15%;
+      height: 100%;
+  }
+
+  #main{
+      float: right;
+      width: 85%;
+  }
+
+ div#up{
+      position: fixed;
+      left: 90%;
+      top: 80%;
+  }
+
+ /*# 第1题: 给类型为 .leftcolumn 的元素里面的、任意两个类型为 .card 的相邻子元素（需要是.leftcolumn的子元素）加一条分隔线.*/
+ 
+ /*每个card后面都有一条下划线*/
+ /* .card{
+    border-bottom: 1px solid #0a0a0a;  
+    border-top:0px;  
+    border-left:0px;  
+    border-right:0px;  
+ }*/
+ .card~.card::before{
+    content: "";
+	  display: block;
+    /*background: linear-gradient(to right, #188eee, #999);
+    width: 100%;
+    height: 1px;*/
+    border-bottom: 1px solid #0a0a0a;  
+    border-top:0px;  
+    border-left:0px;  
+    border-right:0px;  
+    
+ }
+ 
+/* # 第2题：给所有一级、二级、三级标题加上以下效果。鼠标移到标题元素上，该标题左边会出现一个符号(任意可见符号或字母都行)，鼠标移走时会消失*/
+ 
+/*h2:after{
+  content: ' \00A7';
+  display: block;
+  float: left;
+ }*/
+
+
+/*对的*/
+/*  h2:before{
+   content: '\00A7';
+   visibility: hidden;
+ }
+   
+   h2:hover::before{
+    visibility: visible;
+}*/
+
+h2:hover::before{
+  content: '\00A7';
+  position: absolute;
+}
